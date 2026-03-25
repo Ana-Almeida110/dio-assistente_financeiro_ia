@@ -1,0 +1,15 @@
+[
+    {
+        "nome": "João",
+        "saldo_atual": 1250.00,
+        "limite_mensal": 2000.00,
+        "moeda": "R$"
+    },
+
+    {
+        "nome": "Ana",
+        "saldo_atual": 500.00,
+        "limite_mensal": 500.00,
+        "moeda": "R$"
+    }
+]
