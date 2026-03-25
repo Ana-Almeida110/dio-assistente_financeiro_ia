@@ -1,0 +1,11 @@
+id,data,descricao,valor,categoria
+1,01-03-2026,Supermercado,120.50,Alimentação
+2,03-03-2026,Uber,35.00,Transporte
+3,05-03-2026,Netflix,39.90,Assinaturas
+4,07-03-2026,Padaria,18.00,Alimentação
+5,10-03-2026,Posto de gasolina,80.00,Transporte
+6,12-03-2026,Farmácia,45.00,Saúde
+7,15-03-2026,Restaurante,65.00,Alimentação
+8,18-03-2026,Internet,99.90,Contas Fixas
+9,20-03-2026,Academia,70.00,Saúde
+10,22-03-2026,Cinema,50.00,Lazer
