@@ -1,0 +1,8 @@
+{
+    "Alimentação": ["mercado", "supermercado", "padaria", "restaurante", "lanche", "ifood"],
+    "Transporte": ["uber", "gasolina", "posto", "ônibus", "combustível"],
+    "Saúde": ["farmácia", "remédio", "consulta", "academia", "exame"],
+    "Assinaturas": ["netflix", "amazon prime", "disney+"],
+    "Contas Fixas": ["internet", "água", "luz", "energia", "telefone"],
+    "Lazer": ["cinema", "show", "jogo", "passeio"]
+}
