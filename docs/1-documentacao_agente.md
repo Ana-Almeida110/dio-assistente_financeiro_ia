@@ -53,9 +53,9 @@ O agente busca orientar o usuário sem julgamentos, incentivando melhores hábit
 - Objetivo e claro
 
 ### Exemplos de Linguagem
-- Saudação: "Olá! Como posso ajudar com suas finanças hoje?"]
-- Confirmação: "Ok. Gasto com alimentação registrado."]
-- Erro/Limitação: "Não tenho essa informação, mas posso ajudar a registrar ou consultar seus gastos."]
+- Saudação: "Olá! Como posso ajudar com suas finanças hoje?"
+- Confirmação: "Ok. Gasto com alimentação registrado."
+- Erro/Limitação: "Não tenho essa informação, mas posso ajudar a registrar ou consultar seus gastos."
 
 ---
 
@@ -65,41 +65,44 @@ O agente busca orientar o usuário sem julgamentos, incentivando melhores hábit
 
 ```mermaid
 flowchart TD
-    A[Cliente] -->|Mensagem| B[Interface]
-    B --> C[Backend]
-    C --> D[LLM Local-Olama]
-    D --> E[Base de Conhecimento-CSV/JSON]
-    E --> D
-    D --> F[Validação e Regras]
-    F --> G[Resposta ao Usuário]
+    A[Usuário] -->|Interação| B[Interface - Streamlit]
+    B --> C[Backend - agente.py]
+    C --> D[Base de Conhecimento - CSV/JSON]
+    D --> C
+    C --> E[Regras de Negócio e Validação]
+    E --> F[LLM Local - Ollama]
+    F --> C
+    C --> G[Resposta ao Usuário]
 ```
 
 ### Componentes
 
 | Componente | Descrição |
 |------------|-----------|
-| Interface | [Chatbot (Streamlit ou Gradio] |
-| LLM | [Ollama - modelo local executado na máquina] |
-| Base de Conhecimento | [Arquivos JSON/CSV com dados do cliente] |
-| Validação | [Checagem de alucinações] |
+| **Interface** | Aplicação em **Streamlit** usada para interação com o usuário, permitindo registrar despesas, consultar informações financeiras e conversar com o assistente Finni. |
+| **Backend** | Arquivo **`agente.py`**, responsável pela lógica de negócio, tratamento de perguntas, leitura dos dados e integração com o modelo local. |
+| **LLM** | **Ollama**, utilizado para executar localmente um modelo de linguagem generativa, sem dependência de APIs externas. |
+| **Base de Conhecimento** | Arquivos **CSV** e **JSON** armazenados na pasta `data/`, contendo dados mockados de usuários, transações, categorias, alertas e limites de gastos. |
+| **Validação e Regras** | Conjunto de regras implementadas no backend para responder perguntas objetivas sem depender do LLM, além de limitar respostas ao contexto financeiro e evitar informações inventadas. |
 
 ---
 
-## Segurança e Anti-Alucinação
-
-### Estratégias Adotadas
-
-- [X] [Agente só responde com base nos dados fornecidos]
-- [X] [Validação de entradas (valores, datas e categorias)]
-- [X] [Quando não sabe, informa claramente ao usuário]
-- [X] [Não realiza previsões financeiras sem dados suficientes]
-- [X] [Não fornece aconselhamento financeiro profissional (ex.: investimentos]
+- [X] O agente responde com base nos dados disponíveis na base de conhecimento (`CSV` e `JSON`) e no contexto montado para cada usuário.
+- [X] Foram implementadas regras de negócio para responder perguntas objetivas sem depender exclusivamente do modelo de linguagem.
+- [X] Há validação básica de entradas, como nome do usuário, valor da despesa e categorização das transações.
+- [X] Quando não possui informação suficiente, o agente informa claramente sua limitação em vez de inventar respostas.
+- [X] O agente é restrito ao contexto de controle de despesas pessoais, evitando responder fora do escopo financeiro definido.
+- [X] Não realiza previsões financeiras ou análises futuras sem base em dados concretos.
+- [X] Não fornece aconselhamento financeiro profissional, especialmente sobre investimentos, crédito ou decisões patrimoniais complexas.
 
 ### Limitações Declaradas
 > O que o agente NÃO faz?
 
-- Controle automático de contas bancárias (sem integração com bancos)
-- Recomendações de investimentos
-- Análise financeira avançada (ex.: planejamento tributário)
-- Substituição de um contador ou consultor financeiro
-- Garantia de precisão caso o usuário informe dados incorretos
+- Não possui integração com bancos, cartões ou instituições financeiras reais.
+- Não importa automaticamente extratos ou movimentações bancárias.
+- Não realiza recomendações de investimento.
+- Não substitui um contador, consultor financeiro ou planejador financeiro profissional.
+- Não executa análise financeira avançada, como projeção patrimonial, tributária ou de endividamento.
+- Não garante precisão caso o usuário informe dados incorretos ou incompletos.
+- Não interpreta documentos financeiros externos, como boletos, faturas em PDF ou notas fiscais.
+- Não possui autenticação, criptografia ou controle de acesso avançado, por se tratar de um protótipo acadêmico.
