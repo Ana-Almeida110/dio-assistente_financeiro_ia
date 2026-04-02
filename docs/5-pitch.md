@@ -1,11 +1,6 @@
 # Pitch (3 minutos)
 
-> [!TIP]
-> Você pode usar alguns slides pra apoiar no seu Pitch e mostrar sua solução na prática.
- 
-## Roteiro Sugerido
-
-### 1. O Problema (30 seg)
+### 1. O Problema
 > Qual dor do cliente você resolve?
 
 Muitas pessoas têm dificuldade em controlar suas despesas do dia a dia.
@@ -15,7 +10,7 @@ falta de planejamento e até endividamento.
 Meu projeto busca resolver esse problema por meio de um assistente virtual com IA generativa, capaz de ajudar
 o usuário a registar, organizar e acompanhar seus gastos de forma simples e acessível.
 
-### 2. A Solução (1 min)
+### 2. A Solução 
 > Como seu agente resolve esse problema?
 
 A solução desenvolvida foi o Finni, um assistente financeiro inteligente voltado para o controle de despesas pessoais.
@@ -36,7 +31,7 @@ Além disso, o assistente também pode:
 O projeto foi desenvolvido utilizando **Ollama** para execução local do modelo de linguagem e arquivos CSV/JSON como
 base de conhecimento mockada.
 
-### 3. Demonstração (1 min)
+### 3. Demonstração 
 > Mostre o agente funcionando (pode ser gravação de tela)
 
 Na demonstração, será mostrado:
@@ -50,7 +45,7 @@ Exemplos que podem ser apresentados:
 - "Quanto eu gastei esse mês?"
 - "Como estão meus gastos?"
 
-### 4. Diferencial e Impacto (30 seg)
+### 4. Diferencial e Impacto 
 > Por que essa solução é inovadora e qual é o impacto dela na sociedade?
 
 O principal diferencial da solução é tornar o **controle financeiro mais simples, acessível e conversacional**, sem depender
@@ -59,23 +54,23 @@ de planilhas complexas ou sistemas difíceis de usar.
 Além disso, o uso de IA generativa permite uma interação mais natural com o usuário, aproximando a tecnologia de pessoas que
 normalmente têm dificuldade com organização financeira.
 
-O impacto esperado é ajudar usuários a desenvolverem maior consci~encia sobre seus hábitos de consumo, promovendo educação
+O impacto esperado é ajudar usuários a desenvolverem maior consciência sobre seus hábitos de consumo, promovendo educação
 financeira e melhor planejamento pessoal.
 
 ---
 
 ## Checklist do Pitch
 
-- [ ] Duração máxima de 3 minutos
-- [ ] Problema claramente definido
-- [ ] Solução demonstrada na prática
-- [ ] Diferencial explicado
-- [ ] Áudio e vídeo com boa qualidade
+- [X] Duração máxima de 3 minutos
+- [X] Problema claramente definido
+- [X] Solução demonstrada na prática
+- [X] Diferencial explicado
+- [X] Áudio e vídeo com boa qualidade
 
 ---
 
 ## Link do Vídeo
 
-> Cole aqui o link do seu pitch (YouTube, Loom, Google Drive, etc.)
+> [[Link do vídeo](https://drive.google.com/file/d/1-tw3lA03yA5N2h5SrB8tUpYxuW9P58_N/view?usp=drive_link)]
 
-[Link do vídeo]
+
