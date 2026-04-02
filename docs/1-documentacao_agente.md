@@ -65,25 +65,29 @@ O agente busca orientar o usuário sem julgamentos, incentivando melhores hábit
 
 ```mermaid
 flowchart TD
-    A[Usuário] -->|Interação| B[Interface - Streamlit]
+    A[Usuário] --> B[Interface - Streamlit]
     B --> C[Backend - agente.py]
-    C --> D[Base de Conhecimento - CSV/JSON]
+    C --> D[Arquivos de Dados - CSV/JSON]
+    C --> E[Regras de Negócio]
+    C --> F[IA Local - Ollama]
     D --> C
-    C --> E[Regras de Negócio e Validação]
-    E --> F[LLM Local - Ollama]
+    E --> C
     F --> C
     C --> G[Resposta ao Usuário]
+    G --> B
 ```
 
 ### Componentes
 
 | Componente | Descrição |
 |------------|-----------|
-| **Interface** | Aplicação em **Streamlit** usada para interação com o usuário, permitindo registrar despesas, consultar informações financeiras e conversar com o assistente Finni. |
-| **Backend** | Arquivo **`agente.py`**, responsável pela lógica de negócio, tratamento de perguntas, leitura dos dados e integração com o modelo local. |
-| **LLM** | **Ollama**, utilizado para executar localmente um modelo de linguagem generativa, sem dependência de APIs externas. |
-| **Base de Conhecimento** | Arquivos **CSV** e **JSON** armazenados na pasta `data/`, contendo dados mockados de usuários, transações, categorias, alertas e limites de gastos. |
-| **Validação e Regras** | Conjunto de regras implementadas no backend para responder perguntas objetivas sem depender do LLM, além de limitar respostas ao contexto financeiro e evitar informações inventadas. |
+| **Interface Web** | Desenvolvida em **Streamlit**, permite registrar despesas, consultar dados financeiros e conversar com o assistente **Finni**.|
+| **Backend** | Implementado em **Python** no arquivo agente.py, onde estão concentradas a lógica da aplicação e a orquestração do fluxo de resposta.|
+| **Base de Dados Local** | Arquivos **CSV** e **JSON** localizados na pasta data/, utilizados para armazenar usuários, transações, categorias e limites de gastos.|
+| **Regras de Negócio** | Responsáveis por responder consultas objetivas sem depender do modelo de linguagem, como saldo, gastos por categoria, total do mês e alertas financeiros.|
+| **Mecanismo de Intenção** | Camada responsável por interpretar a intenção da pergunta do usuário, identificando se a solicitação pode ser resolvida diretamente por regras programadas ou se exige uma resposta mais aberta com apoio do modelo de linguagem.|
+| **Modelo de Linguagem (LLM) | **Ollama**, usado para gerar respostas abertas e contextualizadas quando a lógica programada não for suficiente.|
+| **Fluxo Híbrido de Resposta** | Combina respostas baseadas em regras com apoio de IA local, tornando a aplicação mais confiável, controlada e eficiente.|
 
 ---
 
