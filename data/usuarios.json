@@ -1,15 +1,14 @@
-[
+﻿[
     {
+        "usuario_id": 1,
         "nome": "João",
-        "saldo_atual": 1250.00,
-        "limite_mensal": 2000.00,
+        "limite_gastos_mes": 2000.0,
         "moeda": "R$"
     },
-
     {
+        "usuario_id": 2,
         "nome": "Ana",
-        "saldo_atual": 500.00,
-        "limite_mensal": 500.00,
+        "limite_gastos_mes": 2000.0,        
         "moeda": "R$"
-    }
+    }   
 ]
