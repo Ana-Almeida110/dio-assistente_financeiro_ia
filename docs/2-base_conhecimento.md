@@ -8,7 +8,6 @@
 | `categorias.json` | JSON | Classificar automaticamente os tipos de despesas com base em palavras-chave |
 | `usuarios.json` | JSON | Armazenar dados básicos do usuário, como nome, saldo atual e limites mensal |
 | `resumo_mensal.csv` | CSV | Apoiar análises e relatórios simples de gastos por período |
-| `alertas.csv` | CSV | Definir regras e mensagens de alertas financeiros |
 | `limites_categorias.json` | JSON | Definir limites de gastos por categoria de despesa |
 
 ---
@@ -75,8 +74,7 @@ Além disso, perguntas mais objetivas, como saldo atual ou total gasto por categ
 ```
 Você está atendendo o seguinte usuário:
 
-- Nome: João 
-- Saldo atual: R$ 1.250,00
+- Nome: João - 
 - Limite mensal: R$ 2.000,00
 
 Total gasto no mês: R$ 689,00
@@ -92,7 +90,8 @@ Gastos por categoria:
 - 22/03: Netflix - R$ 39 (Assinaturas)
 
 Alertas:
-- Seus gastos com alimentação estão elevados neste mês.
+- Você atingiu mais de 80% em Alimentação.
+- Você excedeu o limite em Alimentação em R$ 100,00.
 
 ```
 
